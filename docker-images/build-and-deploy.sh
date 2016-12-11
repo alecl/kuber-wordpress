@@ -29,5 +29,5 @@ ECR_TAG="${ECR_REPO}/${POD}:${VERSION}"
 docker tag "${POD}:${VERSION}" "${ECR_TAG}"
 docker push "${ECR_TAG}"
 echo "ECR = ${ECR_TAG}"
-${kubectl} set image deployment/${STACK_NAME}-${POD} ${STACK_NAME}-${POD}=${ECR_TAG}
-echo "${kubectl} set image deployment/${STACK_NAME}-${POD} ${STACK_NAME}-${POD}=${ECR_TAG}"
+${KUBECTL} set image deployment/${STACK_NAME}-${POD} ${STACK_NAME}-${POD}=${ECR_TAG}
+echo "${KUBECTL} set image deployment/${STACK_NAME}-${POD} ${STACK_NAME}-${POD}=${ECR_TAG}"
